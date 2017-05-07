@@ -1,0 +1,25 @@
+apply plugin:'maven'
+apply plugin:'idea'
+apply plugin:'java'
+apply plugin: 'application'
+
+group = "com.gTerminal.EngineCore"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+mainClassName = "com.gTerminal.EngineCore.Engine"
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.gTerminal.EngineCore.Engine'
+        )
+    }
+}
