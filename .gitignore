@@ -19,7 +19,7 @@ hs_err_pid*
 # Distribution
 *.iml
 .gradle
-/local.properties
+.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
