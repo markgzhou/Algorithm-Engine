@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.class
@@ -23,6 +22,7 @@ hs_err_pid*
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
-/build
+/build/tmp
+/build/classes
 /captures
 .externalNativeBuild
