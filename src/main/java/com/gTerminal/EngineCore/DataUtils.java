@@ -100,6 +100,44 @@ public class DataUtils {
         return sb.toString();
     }
 
+    public static int[] insertionSort(int[] inputs){
+        if(inputs ==null || inputs.length<2){
+            return inputs;
+        }
+        ArrayList result = new ArrayList();
+        result.add(inputs[0]);
+        for(int i=1; i<inputs.length; i++){
+            int x = inputs[i];
+            int j=result.size()-1;
+            while(j>=0 && (int)result.get(j)>x){
+                j--;
+            }
+            result.add(j+1,x);
+        }
+
+        int[] intResults = new int[inputs.length];
+        for(int i=0; i<result.size(); i++){
+            intResults[i]=(int)result.get(i);
+        }
+
+        return intResults;
+    }
+
+    public static void insertionSortInPlace(int[] inputs){
+        if(inputs==null || inputs.length<2){
+            return;
+        }
+        for(int i=1; i<inputs.length; i++){
+            int iValue = inputs[i];
+            int j=i-1;
+            while(j>=0 && inputs[j]>iValue){
+                inputs[j+1] = inputs[j];
+                j--;
+            }
+            inputs[j+1] = iValue;
+        }
+    }
+
     public static String intListToString(SingleLinkedNode first) {
         return listToString(first,"int");
     }
