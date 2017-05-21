@@ -49,4 +49,13 @@ public class DataUtilsTest {
         assertArrayEquals(expected,input);
     }
 
+    @Test
+    public void nthBiggestNumberBaseInsertionSort(){
+        int[] input = new int[]{7,3,8,9,2,0,5,1,4,6};
+        assertEquals(0,testClass.nthBiggestNumberBaseInsertionSort(input,10));
+        assertEquals(1,testClass.nthBiggestNumberBaseInsertionSort(input,9));
+        assertEquals(8,testClass.nthBiggestNumberBaseInsertionSort(input,2));
+        assertEquals(9,testClass.nthBiggestNumberBaseInsertionSort(input,1));
+
+    }
 }

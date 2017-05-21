@@ -138,6 +138,25 @@ public class DataUtils {
         }
     }
 
+    public static int nthBiggestNumberBaseInsertionSort(int[] inputs, int nth){
+        if(inputs== null || inputs.length<nth){
+            return Integer.MIN_VALUE;
+        }
+        else if(inputs.length < 2){
+            return inputs[0];
+        }
+        ArrayList partialSorted = new ArrayList();
+        partialSorted.add(inputs[0]);
+        for(int i=1;i<inputs.length; i++){
+            int j=partialSorted.size()-1;
+            while (j>=0 && (int)partialSorted.get(j)>inputs[i] && (partialSorted.size()-nth)<=j){
+                j--;
+            }
+            partialSorted.add(j+1,inputs[i]);
+        }
+        return (int)partialSorted.get(partialSorted.size()-nth);
+    }
+
     public static String intListToString(SingleLinkedNode first) {
         return listToString(first,"int");
     }
